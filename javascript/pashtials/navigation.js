@@ -2,7 +2,7 @@
  
 export function initNavigation() {
 
-    let links = [
+    let NAV_LINKS = [
         {
             url: "index.html",
             text: "Home",
@@ -27,6 +27,11 @@ export function initNavigation() {
         {
             url:"https://drive.google.com/drive/folders/1rHb5Bk8pF6Ql0aHPjbmd9djfwUdNR12F",
             text:"Download"
+        },
+
+        { 
+            url: "projects.html", 
+            text: "Projects" 
         }
     ];
 /*
@@ -45,7 +50,7 @@ export function initNavigation() {
 
     let code = "";
 
-    links.forEach(function(link) {
+    NAV_LINKS.forEach(function(link) {
         code += navigationMaker(link);
     })
 

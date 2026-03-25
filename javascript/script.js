@@ -15,6 +15,8 @@ import { initContactForm } from "./pashtials/forma.js";
 import { initVideoFlip } from "./pashtials/flipvideo.js";
 import { initButtonsResponsive } from "./pashtials/buttonskrol.js";
 import { initCounter } from "./pashtials/counter.js";
+import { initProjects } from "./pashtials/projects.js";
+
 
 
 
@@ -46,3 +48,4 @@ initVideoAnimation();
 initVideoFlip();
 initButtonsResponsive();
 initCounter()
+initProjects();
