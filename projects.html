@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Felix Constructions | All Projects</title>
+    <meta name="title" content="Felix Constructions | All Projects">
+    <meta name="description" content="Browse all completed and ongoing construction projects by Felix Constructions. Filter by category, location, and year.">
+    <meta name="keywords" content="construction projects, renovations, adaptations, Felix Constructions, building projects">
+    <meta name="author" content="Felic Constructions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.felicconstructions.com/projects.html">
+
+    <link rel="icon" href="images/image-removebg-preview.png" type="image/png">
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' href='css/projects.css'>
+
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <section id="headerrr" class="projects-hero">
+        <video autoplay muted loop class="video-bg__content">
+            <source src="video/12956438-uhd_2560_1440_30fps.mp4" type="video/mp4">
+        </video>
+
+        <header class="container-fluid navbar-light mutna-pozadina p-3">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a onclick="location.href='index.html'" class="navbar-brand text-white box-shadow">
+                        <img src="images/image-removebg-preview.png" alt="Logo" width="130">
+                    </a>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#nekiokvir" class="navbar-toggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="nekiokvir">
+                        <ul class="main-navigation navbar-nav text-uppercase ms-auto text-white"></ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container projects-hero-content">
+            <h1 class="projects-hero-title">Our Projects</h1>
+            <p class="projects-hero-subtitle">Explore our portfolio of completed and ongoing construction work</p>
+        </div>
+    </section>
+
+    <!-- FILTERS & SORTING -->
+    <section class="filters-section container-fluid py-4">
+        <div class="container">
+            <div class="row g-3 align-items-end">
+
+                <!-- Filter: Category -->
+                <div class="col-12 col-md-3">
+                    <label class="filter-label">Category</label>
+                    <select id="filterCategory" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="renovations">Renovations</option>
+                        <option value="adaptations">Adaptations</option>
+                        <option value="roughConstruction">Rough Construction</option>
+                        <option value="doors">Doors</option>
+                        <option value="windows">Windows</option>
+                        <option value="flooring">Flooring</option>
+                        <option value="tilework">Tile Work</option>
+                        <option value="knauf">Drywall & Knauf</option>
+                        <option value="electricalInstallation">Electrical Installation</option>
+                        <option value="plumbingworks">Plumbing Works</option>
+                        <option value="insulation">Insulation</option>
+                        <option value="maintenance">Building Maintenance</option>
+                    </select>
+                </div>
+
+                <!-- Filter: Location -->
+                <div class="col-12 col-md-3">
+                    <label class="filter-label">Location</label>
+                    <select id="filterLocation" class="filter-select">
+                        <option value="all">All Locations</option>
+                        <option value="Belgrade">Belgrade</option>
+                        <option value="Novi Sad">Novi Sad</option>
+                        <option value="Nis">Nis</option>
+                        <option value="Kragujevac">Kragujevac</option>
+                        <option value="Subotica">Subotica</option>
+                    </select>
+                </div>
+
+                <!-- Filter: Year -->
+                <div class="col-12 col-md-2">
+                    <label class="filter-label">Year</label>
+                    <select id="filterYear" class="filter-select">
+                        <option value="all">All Years</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+
+                <!-- Sort -->
+                <div class="col-12 col-md-2">
+                    <label class="filter-label">Sort By</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="year-asc">Year: Oldest First</option>
+                        <option value="year-desc">Year: Newest First</option>
+                    </select>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="col-12 col-md-2">
+                    <button id="resetFilters" class="btn-custom btn-outline w-100 btn-reset-filters">
+                        Reset Filters
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Results count -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p class="results-count">Showing <span id="resultsCount">0</span> projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS GRID -->
+    <section class="projects-grid-section container-fluid py-4">
+        <div class="container">
+
+            <!-- Loading state -->
+            <div id="loadingState" class="state-box text-center py-5">
+                <div class="spinner-border text-warning" role="status"></div>
+                <p class="mt-2 state-loading-text">Loading projects...</p>
+            </div>
+
+            <!-- Error state -->
+            <div id="errorState" class="state-box text-center py-5 d-none">
+                <i class="fas fa-exclamation-triangle fa-3x mb-3 icon-error"></i>
+                <p class="text-error">Failed to load projects. Please try again.</p>
+                <button onclick="loadProjects()" class="btn-custom btn-yellow btn-state mt-2">Retry</button>
+            </div>
+
+            <!-- No results state -->
+            <div id="noResultsState" class="state-box text-center py-5 d-none">
+                <i class="fas fa-search fa-3x mb-3 icon-search"></i>
+                <p class="text-no-results">No projects found matching your criteria.</p>
+                <button id="clearFiltersBtn" class="btn-custom btn-yellow btn-state mt-2">Clear Filters</button>
+            </div>
+
+            <!-- Projects grid -->
+            <div id="projectsGrid" class="row g-4 d-none"></div>
+
+            <!-- Load More -->
+            <div class="load-more-wrapper text-center mt-5">
+                <button id="loadMoreBtn" class="btn-custom btn-yellow btn-load-more d-none">
+                    Load More Projects
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECT MODAL -->
+    <div id="projectModal" class="project-modal-overlay d-none">
+        <div class="project-modal-box">
+            <button id="closeModal" class="modal-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-body-content">
+                <div class="modal-header-row">
+                    <h3 id="modalTitle" class="modal-title"></h3>
+                    <button id="modalFavoriteBtn" class="favorite-btn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="modal-meta">
+                    <span id="modalCategory" class="modal-tag"></span>
+                    <span id="modalLocation" class="modal-tag"></span>
+                    <span id="modalYear" class="modal-tag"></span>
+                    <span id="modalStatus" class="modal-tag"></span>
+                </div>
+                <p id="modalDescription" class="modal-description"></p>
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="stat-label">Duration</span>
+                        <span id="modalDuration" class="stat-value"></span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="stat-label">Price</span>
+                        <span id="modalPrice" class="stat-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-10 py-4 mx-auto">
+            <p class="crna-linija2"></p>
+        </div>
+    </div>
+    
+
+    <!-- FAVORITES SECTION -->
+    <section class="favorites-section container-fluid py-5">
+        <div class="container">
+            <h2 class="favorites-title"><i class="fas fa-heart favorites-heart-icon"></i> Saved Projects</h2>
+            <p class="favorites-subtitle">Projects you have saved to Local Storage</p>
+            <div id="favoritesGrid" class="row g-4 mt-2"></div>
+            <p id="noFavoritesMsg" class="text-center mt-3 no-favorites-msg">No saved projects yet. Click the heart icon on any project!</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="container-fluid">
+        <footer class="container">
+            <div class="row py-4">
+                <div class="col-12 py-4">
+                    <p class="crna-linija2"></p>
+                </div>
+                <div class="col-12">
+                    <div class="row py-4">
+                        <div class="col-12 col-md-6 col-lg-2 mb-3 mb-lg-0">
+                            <a onclick="location.href='index.html'" class="text-white">
+                                <img src="images/image-removebg-preview.png" alt="Logo" width="200">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                            <h4 class="crna-slova">Head office</h4>
+                            <p class="crna-slova">Sveta ulica broj 7</p>
+                            <p class="crna-slova"><a href="tel:+1234567890">+123-456-7890</a></p>
+                            <p class="crna-slova"><a href="mailto:info@info.com">info@info.com</a></p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 mb-3 mb-lg-0">
+                            <h4 class="crna-slova">Socials</h4>
+                            <p class="crna-slova">
+                                <a href="https://www.instagram.com/" class="social-link text-decoration-none text-reset">
+                                    <i class="fab fa-instagram zuta-slova"></i> Instagram
+                                </a>
+                            </p>
+                            <p class="crna-slova">
+                                <a href="https://www.facebook.com/" class="social-link text-decoration-none text-reset">
+                                    <i class="fab fa-facebook zuta-slova"></i> Facebook
+                                </a>
+                            </p>
+                            <p class="crna-slova">
+                                <a href="https://www.youtube.com/" class="social-link text-decoration-none text-reset">
+                                    <i class="fab fa-youtube zuta-slova"></i> YouTube
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                            <h4 class="crna-slova">Inquiries</h4>
+                            <p class="crna-slova">For any inquiries, questions or commendations, please call: 123-456-7890</p>
+                        </div>
+                        <div class="col-12 col-lg-2 text-center text-lg-start">
+                            <button onclick="location.href='index.html#sekcijakontakt'" class="btn-custom btn-yellow w-100">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="text-dark text-center">© 2026 Felix Construction. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="javascript/jQuery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="javascript/script.js" type="module"></script>
+
+</body>
+</html>

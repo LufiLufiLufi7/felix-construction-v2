@@ -1,0 +1,559 @@
+/* ========================================
+   PROJECTS.CSS
+   Stilovi za stranicu projekata
+   ======================================== */
+
+/* ========== HERO SEKCIJA ========== */
+.projects-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+.projects-hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.projects-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.projects-hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 10px;
+}
+
+/* ========== FILTER SEKCIJA ========== */
+.filters-section {
+    background-color: #f8f8f8;
+}
+
+.filter-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f3d215' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); /*strelica u drop down*/
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #f3d215;
+    box-shadow: 0 0 0 2px rgba(243, 210, 21, 0.2);
+}
+
+.results-count {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.results-count span {
+    font-weight: 700;
+    color: #f3d215;
+}
+
+/* ========== PROJECT CARDS ========== */
+.projects-grid-section {
+    background-color: #fff;
+    min-height: 400px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.project-card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.project-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-img {
+    transform: scale(1.08);
+}
+
+.project-card-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(243, 210, 21, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card-overlay {
+    opacity: 1;
+}
+
+.view-details-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Favorite button on card */
+.card-favorite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.card-favorite-btn i {
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.card-favorite-btn.active i,
+.card-favorite-btn:hover i {
+    color: #e74c3c;
+}
+
+.card-favorite-btn:hover {
+    transform: scale(1.15);
+    background: #fff;
+}
+
+.project-card-body {
+    padding: 18px;
+}
+
+.project-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #f3d215;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-card-status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-inprogress {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.project-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.project-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.project-card-info span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.project-card-info i {
+    color: #f3d215;
+    margin-right: 5px;
+    width: 14px;
+}
+
+/* ========== MODAL ========== */
+.project-modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project-modal-box {
+    background: #fff;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f3d215;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+    background: #e0c010;
+}
+
+.modal-close-btn i {
+    color: #333;
+}
+
+.modal-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.modal-body-content {
+    padding: 24px;
+}
+
+.modal-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 10px;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.favorite-btn {
+    background: none;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.favorite-btn i {
+    color: #e74c3c;
+    font-size: 1rem;
+}
+
+.favorite-btn.active {
+    background: #e74c3c;
+}
+
+.favorite-btn.active i {
+    color: #fff;
+}
+
+.modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.modal-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    color: #444;
+}
+
+.modal-tag i {
+    color: #f3d215;
+    margin-right: 4px;
+}
+
+.modal-description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.modal-stats {
+    display: flex;
+    gap: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.modal-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+}
+
+/* ========== FAVORITES SECTION ========== */
+.favorites-section {
+    background: #f8f8f8;
+}
+
+.favorites-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.favorites-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* ========== TOAST NOTIFICATION ========== */
+.favorite-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #222;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 99999;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.favorite-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .projects-hero-title {
+        font-size: 2rem;
+    }
+
+    .modal-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+}
+
+/* ========== FIX: Bootstrap .container override iz style.css ========== */
+.projects-grid-section .container,
+.filters-section .container,
+.favorites-section .container {
+    display: block !important;
+    align-items: unset !important;
+    gap: unset !important;
+}
+
+/* ==========  ========== */
+
+/* Reset filters dugme */
+.btn-reset-filters {
+    min-height: 46px;
+    font-size: 14px;
+}
+
+/* State boxes - loading, error, no results */
+.state-loading-text {
+    color: #666;
+}
+
+.icon-error {
+    color: #dc3545;
+}
+
+.text-error {
+    color: #dc3545;
+}
+
+.icon-search {
+    color: #f3d215;
+}
+
+.text-no-results {
+    color: #666;
+}
+
+/* State buttons */
+.btn-state {
+    min-height: 44px;
+    padding: 10px 20px;
+}
+
+/* Load More dugme - centrirano */
+.load-more-wrapper {
+    width: 100%;
+}
+
+.btn-load-more {
+    min-height: 54px;
+    padding: 15px 50px;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* No favorites message */
+.no-favorites-msg {
+    color: #999;
+}
+
+.favorites-heart-icon {
+    color: #f3d215;
+}
+
+
+/*KADA SE SELEKTUJE BUDE ZUTA BOJA*/
+.filter-select option {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+.filter-select option:checked {
+    background-color: #f3d215 !important;
+    color: #ffffff !important;
+}
+
+/* ========== RESET FILTERS DUGME ========== */
+#resetFilters {
+    background-color: transparent;
+    color: #f3d215;
+    border: 2px solid #f3d215;
+}
+
+#resetFilters:hover {
+    box-shadow: 0 10px 30px rgba(243, 210, 21, 0.5);
+}

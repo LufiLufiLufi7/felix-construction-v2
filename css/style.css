@@ -1,0 +1,1048 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  /*font-size: x-large;*/
+  color: white;
+  box-sizing: border-box;
+
+}
+
+/* ==========  UZEFONTT SA WEB SAJTA https://fonts.google.com/selection/embed  ========== */
+/*
+
+
+
+
+/* ========== OPŠTI STILOVI ========== */
+
+.fs-60 {
+  font-size: 60px;
+  color: black;
+}
+
+/* Klasa za žutu boju teksta */
+.zuta-slova {
+  color: #f3d215;
+}
+
+/* Klasa za crnu boju teksta sa linkom stilizacijom */
+.crna-slova {
+  color: black !important;
+}
+.crna-slova a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Linija ispod naslova širine 300px */
+.crna-linija3{
+  width: 300px;
+  border-bottom: 2px solid black;
+}
+
+/* Box shadow efekat za logo */
+.box-shadow{
+  box-shadow: 0 10px 30px rgba(237, 215, 127, 0.7);
+  background-color: rgba(255, 255, 255, 0.1)
+}
+
+/* ========== ANIMACIJA I STILIZOVANJE SOCIJALNIH IKONICA ========== */
+.social-link i {
+  margin-right: 8px;
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+/* ========== VIDEO POZADINA ========== */
+
+.video-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Tamni overlay preko videa */
+.video-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Video element koji pokriva ceo ekran */
+.video-bg__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  object-fit: cover;
+}
+
+.video-bg__overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header mora biti iznad overlay-a */
+header {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sadržaj mora biti iznad overlay-a */
+.sadrzaj-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.beliOkvir .nav-link {
+  color: white !important;
+}
+
+/* ========== MUTNA POZADINA NAVIGACIJE ========== */
+
+.mutna-pozadina {
+  background-color: rgba(255, 255, 255, 0.0);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.beliOkvir {
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.beliOkvir:hover {
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* ========== O NAMA SEKCIJA ========== */
+
+/* Linija ispod teksta */
+.crna-linija {
+  /*
+  width: 197px;
+  */
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+/* ========== STATISTIKA OVERLAY ========== */
+
+/* Overlay sa statistikom koji prelazi preko slike */
+.statistika-overlay {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(243, 210, 21, 0.7);
+  position: relative;
+  margin-top: -100px;
+  z-index: 10;
+}
+
+/* ========== DUGMAD (BUTTONS) ========== */
+
+/* Osnovna stilizacija svih custom dugmadi */
+.btn-custom {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Providno dugme sa belim okvirom */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Žuto dugme */
+.btn-yellow {
+  background-color: #f3d215;
+  color: black;
+  border: 2px solid #f3d215;
+}
+
+.btn-yellow:hover {
+  background-color: transparent;
+  color: #f3d215;
+  border: 2px solid #f3d215;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* ========== KONTAKT SEKCIJA ========== */
+
+/* Pozadinska slika za kontakt sekciju */
+.pozslika3 {
+  position: relative;
+  background-image: url("../images/pexels-thirdman-5582599.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  color: black;
+}
+
+/* Tamni overlay preko pozadine */
+.pozslika3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.pozslika1-content {
+  position: relative;
+  z-index: 2;
+  color: black
+}
+
+.kontakt-sekcija {
+  background-image: url('../images/tvoja-slika.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
+.kontakt-sekcija::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.kontakt-sekcija .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Providna forma sa mutnim efektom */
+.kontakt-forma {
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.kontakt-forma h2,
+.kontakt-forma p,
+.kontakt-forma label {
+  color: white;
+}
+
+/* ========== STILIZOVANJE INPUT POLJA ========== */
+
+.forma-input {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white !important;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.forma-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.forma-input:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: #f3d215;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+  color: white !important;
+}
+
+/* ========== GLASS EFEKTI ========== */
+
+.glass-btn {
+  background: rgb(255 255 255 / 0%);
+  border: 2px solid #14131300;
+  color: black;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 6px;
+  text-shadow: 0 0 5px #ffffff00, 0 0 10px #fff, 0 0 20px #fff;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 26%);
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.glass-text {
+  background: rgba(255, 255, 255, 0.27);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: black;
+  z-index: 7;
+}
+
+.min-vh-80 {
+  min-height: 80vh;
+}
+
+/* ========== VIDEO GALERIJA SEKCIJA ========== */
+
+.video-section {
+  background-color: #ffffff;
+}
+
+/* Container za video slideshow */
+.video-slide-container {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Wrapper za vertikalno centriranje */
+.video-slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 47px;
+}
+
+/* Naslov iznad videa */
+.video-title {
+  position: relative;
+  z-index: 11;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Centralni video element */
+.central-video {
+  position: relative;
+  z-index: 10;
+  /*
+  width: 40%;
+  */
+  width: 90%;
+  max-width: 600px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.central-video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Button ispod videa */
+.video-button {
+  position: relative;
+  z-index: 11;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* ========== FLOATING SLIKE ========== */
+
+/* Pozicionirane slike oko videa */
+.floating-img {
+  position: absolute !important;
+  border-radius: 3px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.floating-img:hover {
+  z-index: 15;
+  box-shadow: 0 15px 40px rgba(255, 193, 7, 0.4);
+}
+
+/* Početno stanje - slike sakrivene gore */
+.animated-img {
+  opacity: 0;
+  transform: translateY(-200px) rotate(0deg) scale(0.5);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Kada se animiraju */
+.animated-img.drop-in {
+  opacity: 1;
+}
+
+/* Pozicije slika */
+.img-1 {
+  width: 307px;
+  height: 200px;
+  top: 7%;
+  left: 6%;
+}
+
+.img-2 {
+  width: 270px;
+  height: 170px;
+  top: 5%;
+  right: 14%;
+}
+
+.img-3 {
+  width: 300px;
+  height: 180px;
+  bottom: 3%;
+  left: 12%;
+}
+
+.img-4 {
+  width: 270px;
+  height: 170px;
+  bottom: 6%;
+  right: 7%;
+}
+
+.img-5 {
+  width: 270px;
+  height: 170px;
+  top: 41%;
+  left: 10%;
+}
+
+.img-6 {
+  width: 270px;
+  height: 170px;
+  top: 37%;
+  right: 10%;
+}
+
+/* Finalne pozicije sa rotacijom */
+.img-1.drop-in {
+  transform: translateY(0) rotate(-8deg) scale(1);
+}
+
+.img-2.drop-in {
+  transform: translateY(0) rotate(12deg) scale(1);
+}
+
+.img-3.drop-in {
+  transform: translateY(0) rotate(6deg) scale(1);
+}
+
+.img-4.drop-in {
+  transform: translateY(0) rotate(-10deg) scale(1);
+}
+
+.img-5.drop-in {
+  transform: translateY(0) rotate(-5deg) scale(1);
+}
+
+.img-6.drop-in {
+  transform: translateY(0) rotate(8deg) scale(1);
+}
+
+/* ========== FLIP ANIMACIJA VIDEA ========== */
+
+/* Container za flip efekat */
+.video-flip-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Kada je flipped */
+.video-flip-container.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Prednja i zadnja strana */
+.video-front,
+.video-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+}
+
+/* Prednja strana - Video */
+.video-front iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Zadnja strana - Tekst */
+.video-back {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.video-back-content {
+    text-align: center;
+}
+
+.video-back-content h3 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.video-back-content p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+
+
+/* ========== LIGHTBOX ZA SLIKE ========== */
+
+/* Cursor za uvećavanje slika */
+.floating-img {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.floating-img:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay za prikaz uvećane slike */
+.image-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.image-lightbox-img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========== SCROLL ANIMACIJE ========== */
+
+/* Početno stanje - sakrijem slike i video */
+.slikesastrane,
+.videogalerija {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* Aktivna klasa koja se doda preko JS */
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slikesastrane.left {
+  transform: translateX(-100px);
+}
+
+.slikesastrane.left.animate-in {
+  transform: translateX(0);
+}
+
+.slikesastrane.right {
+  transform: translateX(100px);
+}
+
+.slikesastrane.right.animate-in {
+  transform: translateX(0);
+}
+
+.sekcijagalerije1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  color: white;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.videogalerija {
+  width: 600px !important;
+  max-width: 100%;
+  height: 338px;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.slikesastrane {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 15px;
+  z-index: 7 !important;
+}
+
+.slikesastrane img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slikesastrane img:hover {
+  transform: scale(1.1);
+}
+
+.slikesastrane img:not(.active):hover {
+  transform: scale(1.1);
+}
+
+.slikesastrane img.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5.7);
+  transform-origin: center center;
+  z-index: 7;
+  transition: transform 0.4s ease;
+}
+
+.slikesastrane.right img.active {
+  transform: translate(-350%, -50%) scale(5.7) !important;
+}
+
+.slikesastrane.left img.active {
+  transform: translate(+350%, -50%) scale(5.7) !important;
+}
+
+/* ========== FOOTER ========== */
+
+/* Linija preko cele širine */
+.crna-linija2 {
+  width: 100%;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+/* ========== DUGME ZA VRACANJE NA VRH STRANE ========== */
+
+.to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  padding: 10px 17px;
+  background: #f3d215;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+}
+
+.to-top-btn:hover {
+  background: #f3d215;
+}
+
+/* ========== FAQ SEKCIJA ========== */
+
+.faq-section .faq-question {
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid #262523;
+  border-bottom: none;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+
+.faq-section .faq-question:hover {
+  background-color: #f3d215;
+}
+
+.faq-section .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 1rem;
+  background-color: #fffdce;
+  text-indent: 20px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  color: black;
+}
+
+.faq-section .faq-answer.open {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0.8rem 1rem;
+}
+
+/* ========== FORMA VALIDACIJA ========== */
+
+/* Stilizacija za prikaz greške */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+.forma-input.error {
+  border-color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.forma-input.success {
+  border-color: #28a745 !important;
+}
+
+/* Success poruka nakon slanja forme */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== SEKCIJA O AUTORU ========== */
+
+.profile-section {
+  padding: 120px 0;
+  background-color: #fff;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f3d215;
+  margin-bottom: 2rem;
+}
+
+.profile-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* Stilizacija slike autora sa clip-path */
+.profile-image {
+  width: 75%;
+  max-width: 450px;
+  height: auto;
+  clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
+  filter: grayscale(20%);
+  transition: all 0.4s ease;
+}
+
+.profile-image:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* ========== SEKCIJA PROJEKATA ========== */
+
+.projects-section {
+  padding: 100px 0;
+}
+
+.project-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/* Visine različitih kartica */
+.project-tall {
+  height: 300px;
+}
+
+.project-short {
+  height: 250px;
+}
+
+.project-large {
+  height: 100%;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay koji se pojavljuje pri hoveru */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(243, 210, 21, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.project-name {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 20px;
+}
+
+.project-item:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* ========== VALIDACIJA FORME ========== */
+.error-message { 
+    display: none; 
+    color: #dc3545; 
+    font-size: 0.875rem; 
+    margin-top: 4px; 
+}
+.error-message.show { 
+    display: block; 
+}
+.forma-input.error { 
+    border-color: #dc3545 !important; 
+}
+.forma-input.success { 
+    border-color: #28a745 !important; 
+}
+
+/* ========== intl-tel-input (telefon sa zastavama) ========== */
+.iti { 
+    width: 100%; 
+}
+
+.error-message { display: none; color: #dc3545; font-size: 0.875rem; margin-top: 4px; }
+.error-message.show { display: block; }
+.forma-input.error { border-color: #dc3545 !important; }
+.forma-input.success { border-color: #28a745 !important; }
+.iti { width: 100%; }
+
+
+/* ========== SELECT DROPDOWN ========== */
+select.forma-input {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white !important;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f3d215' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+select.forma-input:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: #f3d215;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+    color: white !important;
+}
+
+select.forma-input option {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 10px;
+}
+
+select.forma-input option:disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+select.forma-input option:hover {
+    background-color: #f3d215;
+    color: black;
+}
+
+
+/* ========== telefon zastavice dropdown  ========== */
+.iti__country-list {
+    background-color: white !important;
+    color: black !important;
+}
+
+.iti__country {
+    color: black !important;
+}
+
+.iti__country-name {
+    color: black !important;
+}
+
+.iti__dial-code {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.iti__country.iti__highlight {
+    background-color: rgba(243, 210, 21, 0.3) !important;
+}
+
+.iti__search-input {
+    background-color: white !important;
+    color: black !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.iti__search-input::placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ========== Ovo je za dropdown u formi ========== */
+select.forma-input option {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* ========== DATE INPUT ========== */
+input[type="date"].forma-input {
+    color: white !important;
+    color-scheme: dark;
+}
+
+input[type="date"].forma-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+input[type="date"].forma-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+
+
+/* ========== BELA SLOVA U FORMI SUBMIT ========== */
+
+button[type="submit"].btn-yellow {
+    color: white !important;
+}
+
+
+
