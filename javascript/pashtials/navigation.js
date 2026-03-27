@@ -25,7 +25,7 @@ export function initNavigation() {
         },
 
         {
-            url:"https://drive.google.com/drive/folders/1rHb5Bk8pF6Ql0aHPjbmd9djfwUdNR12F",
+            url:"https://drive.google.com/drive/folders/1g9xVolwRE4dcH94Mz7fyO4P6WJgMAWC9",
             text:"Download"
         },
 
